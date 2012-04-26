@@ -1,0 +1,18 @@
+<fieldset>
+  <legend>Add / Edit City</legend>
+  <div class="fields">
+    <ul>
+      <li>
+        <%= f.label :name, 'City Name' %>
+        <%= f.text_field :name, :class => "city_name_field" %>
+        <%= link_to_remove_fields 'Remove', f %>
+      </li>
+      <%= f.fields_for :areas do |builder| %>
+          <%= render 'area_fields', :f => builder %>
+      <% end %>
+      <li style="border-top: 1px solid #ccc" class="cf">
+        <%= link_to_add_fields "Add Area", f, :areas %>
+      </li>
+    </ul>
+  </div>
+</fieldset>

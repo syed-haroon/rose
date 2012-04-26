@@ -1,0 +1,22 @@
+<% title "Location :: #{@state.name}" %>
+<p>
+  <strong>State Name:</strong>
+  <%= @state.name %>
+</p>
+
+<ol>
+  <% @state.cities.each do |city| %>
+      <li>City Name: <%= city.name %></li>
+      <ul>
+        <% city.areas.each do |area| %>
+            <li>Area Name: <%= area.name %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</ol>
+
+<p style="border-top: 1px solid #ccc; margin-top: 10px">
+  <%= link_to "Edit", edit_state_path(@stare) %> |
+  <%= link_to "Destroy", @stare, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", states_path %>
+</p>
