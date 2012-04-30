@@ -1,0 +1,22 @@
+fieldset {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 1px 1px 2px #FFFFFF inset;
+    margin-top: 1em;
+    padding: 1.5em;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+fieldset legend{
+    background-color: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 3px 3px 15px #BBBBBB;
+    color: #444444;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: auto;
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 0
+}

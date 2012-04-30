@@ -7,7 +7,7 @@
 <ol>
   <% @state.cities.each do |city| %>
       <li>City Name: <%= city.name %></li>
-      <ul>
+      <ul class="unstyled">
         <% city.areas.each do |area| %>
             <li>Area Name: <%= area.name %></li>
         <% end %>
@@ -15,8 +15,8 @@
   <% end %>
 </ol>
 
-<p style="border-top: 1px solid #ccc; margin-top: 10px">
-  <%= link_to "Edit", edit_state_path(@stare) %> |
-  <%= link_to "Destroy", @stare, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", states_path %>
-</p>
+<div class="form-actions">
+  <%= link_to "Edit", edit_state_path(@stare), :class => 'btn' %>
+  <%= link_to "Destroy", @stare, :class => 'btn', :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to "View All", states_path, :class => 'btn' %>
+</div>
