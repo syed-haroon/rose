@@ -8,22 +8,25 @@
   <%= link_to "Add New Location", new_state_path, :class => "btn btn-primary pull-right" %>
 </div>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th width="80%">State Name</th>
-    <th width="20%">&nbsp;</th>
-  </tr>
-  </thead>
-  <% @states.each do |state| %>
-      <tr class="<%= cycle('row0', 'row1') %> dotted_border">
-        <td><%= state.name %></td>
-        <td>
-          <%= link_to "Show", state, :class => 'btn' %>
-          <%= link_to "Edit", edit_state_path(state), :class => 'btn' %>
-          <%= link_to "Destroy", state, :class => 'btn', :confirm => 'Are you sure?', :method => :delete %>
-        </td>
+<% if @states.empty? %>
+    <div class="alert alert-success">Currently the State list is empty, create one by clicking "Add new State" button.</div>
+<% else %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th width="80%">State Name</th>
+        <th width="20%">&nbsp;</th>
       </tr>
-  <% end %>
-</table>
-
+      </thead>
+      <% @states.each do |state| %>
+          <tr class="<%= cycle('row0', 'row1') %> dotted_border">
+            <td><%= state.name %></td>
+            <td>
+              <%= link_to "Show", state, :class => 'btn' %>
+              <%= link_to "Edit", edit_state_path(state), :class => 'btn' %>
+              <%= link_to "Destroy", state, :class => 'btn', :confirm => 'Are you sure?', :method => :delete %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
