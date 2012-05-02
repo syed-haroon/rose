@@ -44,10 +44,13 @@
 </div>
 <div class="container">
   <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}", :class => [name, " alert alert-success"] %>
-      <%= content_tag :script, :type => "text/javascript" do -%>
-          setTimeout("new Effect.Fade('flash_<%= name %>');", 15000);
-      <% end %>
+      <div id="<%= "flash_#{name}" %>" class="<%= "#{name} alert alert-success" %>">
+        <button data-dismiss="alert" class="close">×</button>
+        <%= msg %>
+        <%= content_tag :script, :type => "text/javascript" do -%>
+            setTimeout("new Effect.Fade('flash_<%= name %>');", 15000);
+        <% end %>
+      </div>
   <% end %>
   <%= yield %>
 </div>

@@ -9,7 +9,10 @@
 </div>
 
 <% if @states.empty? %>
-    <div class="alert alert-success">Currently the State list is empty, create one by clicking "Add new State" button.</div>
+    <div class="alert alert-success">
+      <button data-dismiss="alert" class="close">×</button>
+      Currently the State list is empty, create one by clicking "Add new State" button.
+    </div>
 <% else %>
     <table class="table table-striped">
       <thead>

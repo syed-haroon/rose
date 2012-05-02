@@ -10,7 +10,7 @@
       <%= f.fields_for :areas do |builder| %>
           <%= render 'area_fields', :f => builder %>
       <% end %>
-      <li style="border-top: 1px solid #ccc" class="cf">
+      <li class="form-actions">
         <%= link_to_add_fields "Add Area", f, :areas %>
       </li>
     </ul>

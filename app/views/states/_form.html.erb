@@ -7,7 +7,7 @@
     <%= f.fields_for :cities do |builder|%>
         <%= render 'city_fields', :f => builder %>
     <% end %>
-    <div class="cf" style="border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-bottom: 10px">
+    <div class="form-actions">
       <%= link_to_add_fields "Add City", f, :cities %>
     </div>
     <div class="form-actions">
