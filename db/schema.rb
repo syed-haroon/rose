@@ -11,6 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120425024212) do
+
+  create_table "areas", :force => true do |t|
+    t.integer "city_id"
+    t.string  "name"
+  end
+
+  add_index "areas", ["city_id"], :name => "index_areas_on_city_id"
+
+  create_table "cities", :force => true do |t|
+    t.integer "state_id"
+    t.string  "name"
+  end
+
+  add_index "cities", ["state_id"], :name => "index_cities_on_state_id"
+
+  create_table "states", :force => true do |t|
+    t.string "name"
+  end
 
 end

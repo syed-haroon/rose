@@ -61,3 +61,4 @@ module Rose
     config.generators.helper = false
   end
 end
+

@@ -1,2 +1,10 @@
 <% title "Add New Location" %>
+<div class="row show-grid">
+  <div class="span4">
+    <%= content_tag :h2, :class => "pgTitle" do
+      yield(:title) if show_title?
+    end %>
+  </div>
+</div>
+
 <%= render :partial => 'form' %>
