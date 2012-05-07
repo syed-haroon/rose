@@ -12,8 +12,4 @@ module ApplicationHelper
     link_to_function(name, "add_fields(this, '#{association}', '#{escape_javascript(fields)}')", :class => "add_field btn")
   end
 
-  def menu_selected(controller_name)
-    params[:controller] == controller_name ? "selected" : ""
-  end
-
 end

@@ -1,7 +1,7 @@
-<li class="fields area_fields form-inline">
-  <div>
-  <%= f.label :name, 'Area Name' %>
-  <%= f.text_field :name, :class => "area_name_field" %>
-  <%= link_to_remove_fields 'Remove', f %>
-  </div>
+<li class="fields area_fields control-group">
+    <%= f.label :name, 'Area Name', :class=>"control-label" %>
+    <div class="controls">
+      <%= f.text_field :name, :class => "area_name_field" %>
+      <%= link_to_remove_fields 'Remove', f %>
+    </div>
 </li>

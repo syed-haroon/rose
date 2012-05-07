@@ -1,10 +1,6 @@
 <% title "List of Location" %>
-<div class="row show-grid">
-  <div class="span4">
-    <%= content_tag :h2, :class => "pgTitle" do
-      yield(:title) if show_title?
-    end %>
-  </div>
+<div class="row">
+  <%= page_title(yield(:title)) %>
 </div>
 <%= render :partial => 'form' %>
 

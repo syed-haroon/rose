@@ -23,9 +23,5 @@ end
 ActionView::Helpers::FormBuilder.send(:include, ErrorMessagesHelper::FormBuilderAdditions)
 
 def flash_alert_status
-  if flash[:warning]
-    alert_status = "alert-error"
-  else
-    alert_status = "alert-success"
-  end
+  flash[:warning] ? alert_status = "alert-error" : alert_status = "alert-success"
 end

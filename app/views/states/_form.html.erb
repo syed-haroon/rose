@@ -1,8 +1,22 @@
-<%= form_for @state do |f| %>
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Legend text</legend>
+    <div class="control-group">
+      <label class="control-label" for="input01">Text input</label>
+      <div class="controls">
+        <input type="text" class="input-xlarge" id="input01">
+        <span class="help-inline">Something may have gone wrong</span>
+        <p class="help-block">Supporting help text</p>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<%= form_for @state, :html=> {:class=>"form-horizontal"} do |f| %>
     <%= f.error_messages %>
-    <div class="state_field well form-inline">
-      <%= f.label :name, 'State Name' %>
-      <%= f.text_field :name %>
+    <div class="state_field well control-group">
+      <%= f.label :name, 'State Name', :class=>"control-label" %>
+      <div class="controls"><%= f.text_field :name %></div>
     </div>
     <%= f.fields_for :cities do |builder|%>
         <%= render 'city_fields', :f => builder %>

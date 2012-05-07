@@ -1,11 +1,12 @@
 <fieldset>
-  <legend>Add / Edit City and Area</legend>
   <div class="fields">
     <ul class="unstyled">
-      <li class="well form-inline">
-        <%= f.label :name, 'City Name' %>
+      <li class="well control-group">
+        <%= f.label :name, 'City Name', :class=>"control-label" %>
+        <div class="controls">
         <%= f.text_field :name, :class => "city_name_field" %>
         <%= link_to_remove_fields 'Remove', f %>
+        </div>
       </li>
       <%= f.fields_for :areas do |builder| %>
           <%= render 'area_fields', :f => builder %>

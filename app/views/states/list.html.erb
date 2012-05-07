@@ -1,13 +1,8 @@
 <% title "List of Location" %>
-<div class="row show-grid">
-  <div class="span4">
-    <%= content_tag :h2, :class => "pgTitle" do
-      yield(:title) if show_title?
-    end %>
-  </div>
+<div class="row">
+  <%= page_title(yield(:title)) %>
   <%= link_to "Add New Location", new_state_path, :class => "btn btn-primary pull-right" %>
 </div>
-
 <% if @states.empty? %>
     <div class="alert alert-info">
       Currently the State list is empty, create one by clicking "Add new State" button.

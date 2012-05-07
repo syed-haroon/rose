@@ -19,4 +19,17 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+
+  def menu_selected(controller_name)
+    params[:controller] == controller_name ? "selected" : ""
+  end
+
+  def page_title(args)
+    if show_title?
+      content_tag(:div, :class => "span4") {
+        content_tag(:h2, :class => "pgTitle"){args}
+      }
+    end
+  end
+
 end
