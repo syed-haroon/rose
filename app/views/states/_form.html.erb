@@ -1,17 +1,3 @@
-<form class="form-horizontal">
-  <fieldset>
-    <legend>Legend text</legend>
-    <div class="control-group">
-      <label class="control-label" for="input01">Text input</label>
-      <div class="controls">
-        <input type="text" class="input-xlarge" id="input01">
-        <span class="help-inline">Something may have gone wrong</span>
-        <p class="help-block">Supporting help text</p>
-      </div>
-    </div>
-  </fieldset>
-</form>
-
 <%= form_for @state, :html=> {:class=>"form-horizontal"} do |f| %>
     <%= f.error_messages %>
     <div class="state_field well control-group">

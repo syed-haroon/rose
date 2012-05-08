@@ -59,6 +59,10 @@ module Rose
     config.generators.stylesheets = false
     config.generators.javascripts = false
     config.generators.helper = false
+
+    #config.action_view.field_error_proc = Proc.new { |html_tag, instance| "<span class='field_with_errors'>#{html_tag} <small class='error'>&nbsp; #{instance.error_message}</small> </span>".html_safe }
+
+
   end
 end
 
