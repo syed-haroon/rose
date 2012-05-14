@@ -27,3 +27,21 @@ function add_fields(link, association, content) {
 }
 
 $('span.field_with_errors').parent().addClass("error");
+
+
+$(function(){
+
+    $('input[name^="text"]').change(function() {
+
+        var $current = $(this);
+
+        $('input[name^="text"]').each(function() {
+            if ($(this).val() == $current.val() && $(this).attr('id') != $current.attr('id'))
+            {
+                alert('duplicate found!');
+            }
+
+        });
+    });
+});
+
