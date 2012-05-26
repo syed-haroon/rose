@@ -1,4 +1,12 @@
 Rose::Application.routes.draw do
+  get "users/new"
+
+  get "users/list"
+
+  get "users/show"
+
+  get "users/edit"
+
   resources :users
   match 'users/update_state_select/:id', :controller=>'users', :action => 'update_state_select'
   match 'users/update_city_select/:id', :controller=>'users', :action => 'update_city_select'

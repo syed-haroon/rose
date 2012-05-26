@@ -1,0 +1,18 @@
+<% title "User's Detail" %>
+<div class="float_r">
+  <%= link_to "Edit", edit_user_path(@user) %> |
+  <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %>
+</div>
+<%= link_to "Add New user", new_user_path, :class => "btnA blueBtn float_r mt-50" %>
+<ul class="showLayout">
+  <li><label>Name :</label> <%= @user.first_name %> <%= @user.last_name %></li>
+  <li><label>Email:</label> <%= @user.email %></li>
+  <li><label>user Type:</label> <%= @user.user_type %></li>
+  <li><label>Qualification:</label> <%= @qualifications %></li>
+  <li><label>Job Title:</label> <%= @user.job_title %></li>
+  <li><label>Assigned to:</label> <%= @user.assigned_to %></li>
+  <li><label>Telephone:</label> <%= @user.telephone %></li>
+  <li><label>Mobile:</label> <%= @user.mobile_phone %></li>
+  <li><label>Date of Birth:</label> <%= @user.date_of_birth %></li>
+  <li><label>Wedding Date:</label> <%= @user.wedding_date %></li>
+</ul>

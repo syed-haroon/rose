@@ -1,0 +1,68 @@
+<%= form_for @user do |f| %>
+    <%= f.error_messages %>
+    <ul>
+      <li class="cf">
+        <%= f.label :title_gender, 'Title' %>
+        <%= f.select(:title_gender, ["Mr", 'Ms'], {:prompt => 'Select Gender'})%>
+      </li>
+      <li class="cf">
+        <%= f.label :first_name, 'Last Name' %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li class="cf">
+        <%= f.label :last_name, 'Last Name' %>
+        <%= f.text_field :last_name %>
+      </li>
+      <li class="cf">
+        <%= f.label :email, 'Email' %>
+        <%= f.text_field :email %>
+      </li>
+      <li class="cf">
+        <%= f.label :user_type, 'User Type' %>
+        <%= f.text_field :user_type %>
+      </li>
+      <li class="cf">
+        <%= f.label :job_title, 'Job Title' %>
+        <%= f.text_field :job_title %>
+      </li>
+      <li class="cf">
+        <%= f.label :assigned_to, 'Assigned to' %>
+        <%= f.text_field :assigned_to %>
+      </li>
+      <li class="cf">
+        <%= f.label :block, 'Active' %>
+
+        <%= f.radio_button(:block, "1") %>  Yes
+        <%= f.radio_button(:block, "0") %>  No
+      </li>
+      <li class="cf">
+        <%= f.label :telephone, 'Telephone' %>
+        <%= f.text_field :telephone %>
+      </li>
+      <li class="cf">
+        <%= f.label :mobile_phone, 'Mobile' %>
+        <%= f.text_field :mobile_phone %>
+      </li>
+      <li class="cf">
+        <%= f.label :date_of_birth, 'Date of Birth' %>
+        <%= f.date_select :date_of_birth,
+                          :start_year => Time.now.year - 50,
+                          :end_year => Time.now.year - 15,
+                          :order => [:day, :month, :year],
+                          :prompt => true
+        %>
+      </li>
+      <li class="cf">
+        <%= f.label :wedding_date, 'Wedding Date' %>
+        <%= f.date_select :wedding_date,
+                          :start_year => Time.now.year - 50,
+                          :end_year => Time.now.year,
+                          :order => [:day, :month, :year],
+                          :prompt => true
+        %>
+      </li>
+      <li class="actions">
+        <%= f.submit %>
+      </li>
+    </ul>
+<% end %>
