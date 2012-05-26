@@ -17,7 +17,21 @@
       </thead>
       <% @states.each do |state| %>
           <tr class="<%= cycle('row0', 'row1') %> dotted_border">
-            <td><%= state.name %></td>
+            <td>
+              <%= state.name %>
+              <% state.cities.each do |city| %>
+                  <div>
+                    <span class="gi">|&mdash;</span>
+                    <%= city.name %>
+                  </div>
+                  <% city.areas.each do |area| %>
+                      <div>
+                        <span class="gi">|&mdash;</span> <span class="gi">|&mdash;</span>
+                        <%= area.name %>
+                      </div>
+                  <% end %>
+              <% end %>
+            </td>
             <td>
               <%= link_to "Show", state, :class => 'btn' %>
               <%= link_to "Edit", edit_state_path(state), :class => 'btn' %>
