@@ -1,68 +1,63 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, :html=> {:class=>"form-horizontal"} do |f| %>
     <%= f.error_messages %>
-    <ul>
-      <li class="cf">
-        <%= f.label :title_gender, 'Title' %>
-        <%= f.select(:title_gender, ["Mr", 'Ms'], {:prompt => 'Select Gender'})%>
+    <ul class="unstyled">
+      <li class="control-group">
+        <%= f.label :title_gender, 'Title', :class=>"control-label" %>
+        <div class="controls"><%= f.select(:title_gender, ["Mr", 'Ms'], {:prompt => 'Select Gender'})%></div>
       </li>
-      <li class="cf">
-        <%= f.label :first_name, 'Last Name' %>
-        <%= f.text_field :first_name %>
+      <li class="control-group">
+        <%= f.label :first_name, 'Last Name', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :first_name %></div>
       </li>
-      <li class="cf">
-        <%= f.label :last_name, 'Last Name' %>
-        <%= f.text_field :last_name %>
+      <li class="control-group">
+        <%= f.label :last_name, 'Last Name', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :last_name %></div>
       </li>
-      <li class="cf">
-        <%= f.label :email, 'Email' %>
-        <%= f.text_field :email %>
+      <li class="control-group">
+        <%= f.label :email, 'Email', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :email %></div>
       </li>
-      <li class="cf">
-        <%= f.label :user_type, 'User Type' %>
-        <%= f.text_field :user_type %>
+      <li class="control-group">
+        <%= f.label :user_type, 'User Type', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :user_type %></div>
       </li>
-      <li class="cf">
-        <%= f.label :job_title, 'Job Title' %>
-        <%= f.text_field :job_title %>
+      <li class="control-group">
+        <%= f.label :job_title, 'Job Title', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :job_title %></div>
       </li>
-      <li class="cf">
-        <%= f.label :assigned_to, 'Assigned to' %>
-        <%= f.text_field :assigned_to %>
+      <li class="control-group">
+        <%= f.label :assigned_to, 'Assigned to', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :assigned_to %></div>
       </li>
-      <li class="cf">
-        <%= f.label :block, 'Active' %>
-
-        <%= f.radio_button(:block, "1") %>  Yes
-        <%= f.radio_button(:block, "0") %>  No
+      <li class="control-group">
+        <%= f.label :block, 'Active', :class=>"control-label" %>
+        <div class="controls">
+          <%= f.radio_button(:block, "1") %>  Yes
+          <%= f.radio_button(:block, "0") %>  No
+        </div>
       </li>
-      <li class="cf">
-        <%= f.label :telephone, 'Telephone' %>
-        <%= f.text_field :telephone %>
+      <li class="control-group">
+        <%= f.label :telephone, 'Telephone', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :telephone %></div>
       </li>
-      <li class="cf">
-        <%= f.label :mobile_phone, 'Mobile' %>
-        <%= f.text_field :mobile_phone %>
+      <li class="control-group">
+        <%= f.label :mobile_phone, 'Mobile', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :mobile_phone %></div>
       </li>
-      <li class="cf">
-        <%= f.label :date_of_birth, 'Date of Birth' %>
-        <%= f.date_select :date_of_birth,
-                          :start_year => Time.now.year - 50,
-                          :end_year => Time.now.year - 15,
-                          :order => [:day, :month, :year],
-                          :prompt => true
-        %>
+      <li class="control-group">
+        <%= f.label :date_of_birth, 'Date of Birth', :class=>"control-label" %>
+        <div class="controls">
+          <%= f.text_field :date_of_birth, :id => "user_date_of_birth", :value => params[:action] == "edit" ? @user.date_of_birth.to_s(:dmy) : "" %>
+        </div>
       </li>
-      <li class="cf">
-        <%= f.label :wedding_date, 'Wedding Date' %>
-        <%= f.date_select :wedding_date,
-                          :start_year => Time.now.year - 50,
-                          :end_year => Time.now.year,
-                          :order => [:day, :month, :year],
-                          :prompt => true
-        %>
+      <li class="control-group">
+        <%= f.label :wedding_date, 'Wedding Date', :class=>"control-label" %>
+        <div class="controls">
+          <%= f.text_field :wedding_date, :id => "user_wedding_date", :value => params[:action] == "edit" ? @user.wedding_date.to_s(:dmy) : "" %>
+        </div>
       </li>
-      <li class="actions">
-        <%= f.submit %>
+      <li class="form-actions">
+        <%= f.submit :class=>"btn btn-large btn-primary" %>
       </li>
     </ul>
 <% end %>

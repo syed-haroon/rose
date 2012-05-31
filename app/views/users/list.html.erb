@@ -1,34 +1,49 @@
 <% title "List of Users" %>
-<%= link_to "Add New User", new_user_path, :class => "btnA blueBtn float_r mt-50" %>
-<table class="adminlist">
-  <thead>
-  <tr>
-    <th width="18%">User Name</th>
-    <th width="20%">Email</th>
-    <th width="10%">User Type</th>
-    <th width="10%">Job Title</th>
-    <th width="10%">Assigned to</th>
-    <th width="10%">Telephone</th>
-    <th width="10%">Mobile</th>
 
-    <th width="4%">&nbsp;</th>
-    <th width="3%">&nbsp;</th>
-    <th width="5%">&nbsp;</th>
-  </tr>
-  </thead>
-  <% @users.each do |user| %>
-      <tr class="<%= cycle('row0', 'row1') %> dotted_border">
-        <td><%= user.first_name %> <%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.user_type %></td>
-        <td><%= user.job_title %></td>
-        <td><%= user.assigned_to %></td>
-        <td><%= user.telephone %></td>
-        <td><%= user.mobile_phone %></td>
+<div class="page-header">
+  <%= link_to "Add New Location", new_user_path, :class => "btn btn-primary pull-right" %>
+  <%= page_title(yield(:title)) %>
+</div>
 
-        <td><%= link_to "Show", user %></td>
-        <td><%= link_to "Edit", edit_user_path(user) %></td>
-        <td><%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></td>
+<% if @users.empty? %>
+    <div class="alert alert-info">
+      Currently the User list is empty, create one by clicking "Add new User" button.
+    </div>
+<% else %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th width="18%">User Name</th>
+        <th width="15%">Email</th>
+        <th width="10%">User Type</th>
+        <th width="10%">Job Title</th>
+        <th width="10%">Assigned to</th>
+        <th width="10%">Telephone</th>
+        <th width="10%">Mobile</th>
+
+        <th width="17%">&nbsp;</th>
       </tr>
-  <% end %>
-</table>
+      </thead>
+
+      <% @users.each do |user| %>
+          <tr class="<%= cycle('row0', 'row1') %> dotted_border">
+            <td><%= user.first_name %> <%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.user_type %></td>
+            <td><%= user.job_title %></td>
+            <td><%= user.assigned_to %></td>
+            <td><%= user.telephone %></td>
+            <td><%= user.mobile_phone %></td>
+
+            <td>
+              <%= link_to "Show", user, :class => 'btn' %>
+              <%= link_to "Edit", edit_user_path(user), :class => 'btn' %>
+              <%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+            </td>
+          </tr>
+      <% end %>
+
+    </table>
+
+<% end %>
+

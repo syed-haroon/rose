@@ -3,6 +3,7 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <link rel="stylesheet" href="/assets/themes/smoothness/jquery.ui.all.css">
   <%= csrf_meta_tags %>
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -10,6 +11,24 @@
   <![endif]-->
   <%= yield(:head) %>
   <%= javascript_include_tag "application" %>
+  <script>
+      $(function() {
+          $( "#user_date_of_birth" ).datepicker({
+              changeMonth: true,
+              changeYear: true,
+              dateFormat: 'dd-mm-yy',
+              yearRange: "-60:-15"
+          });
+      });
+      $(function() {
+          $( "#user_wedding_date" ).datepicker({
+              changeMonth: true,
+              changeYear: true,
+              dateFormat: 'dd-mm-yy',
+              yearRange: "-60:-0"
+          });
+      });
+  </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -34,9 +53,11 @@
       </div>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class=""><a href="#"><span>Home</span></a></li>
+          <li class="<%= menu_selected("users") %>"><a href="/users"><span>User</span></a></li>
+          <li class="<%= menu_selected("states") %>"><a href="/locations"><span>Location</span></a></li>
+          <li class=""><a href="/"><span>Doctors</span></a></li>
+          <li class="last_r"><a href="/"><span>Admin</span></a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -50,8 +71,8 @@
       </div>
       <%= content_tag :script, :type => "text/javascript" do %>
           $('#flash_<%= name %>').fadeIn().delay(6000).fadeOut('slow');
-<% end %>
-<% end %>
+      <% end %>
+  <% end %>
   <%= yield %>
 </div>
 </body>

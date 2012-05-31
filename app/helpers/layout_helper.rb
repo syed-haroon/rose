@@ -26,9 +26,7 @@ module LayoutHelper
 
   def page_title(args)
     if show_title?
-      content_tag(:div, :class => "span4") {
         content_tag(:h2, :class => "pgTitle"){args}
-      }
     end
   end
 

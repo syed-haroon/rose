@@ -29,5 +29,8 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
   end
 end
 
+#date formatted in edit view to remove "00:00:00" from "04-10-2011 00:00:00"
+Date::DATE_FORMATS[:dmy] = "%d-%m-%Y"
+
 
 

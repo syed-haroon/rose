@@ -1,8 +1,10 @@
 <% title "List of Location" %>
-<div class="row">
-  <%= page_title(yield(:title)) %>
+
+<div class="page-header">
   <%= link_to "Add New Location", new_state_path, :class => "btn btn-primary pull-right" %>
+  <%= page_title(yield(:title)) %>
 </div>
+
 <% if @states.empty? %>
     <div class="alert alert-info">
       Currently the State list is empty, create one by clicking "Add new State" button.

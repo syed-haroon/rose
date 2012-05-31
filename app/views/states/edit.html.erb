@@ -1,10 +1,10 @@
-<% title "List of Location" %>
-<div class="row">
+<% title "Edit - #{@state.name}" %>
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Show", @state, :class => 'btn' %>
+    <%= link_to "View All", states_path, :class => 'btn' %>
+  </div>
+
   <%= page_title(yield(:title)) %>
 </div>
 <%= render :partial => 'form' %>
-
-<p>
-  <%= link_to "Show", @stare %> |
-  <%= link_to "View All", states_path %>
-</p>

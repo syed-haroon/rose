@@ -22,3 +22,7 @@ body {
     padding-top: 60px;
     padding-bottom: 40px;
 }
+
+/*jquery-ui css override */
+.ui-datepicker{font-size: 96.5%!important;}
+.ui-datepicker .ui-datepicker-header{ padding: 0}
