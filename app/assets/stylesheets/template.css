@@ -27,3 +27,8 @@ fieldset legend{
 
 .showStateView .cityName        { font-size: 15px; font-weight: bold }
 .showStateView ol > ul   { margin-bottom: 30px }
+
+.showView li{ margin-bottom: 20px }
+.showView label{ display: inline-block; text-align: right; width: 140px; margin-right: 5px }
+.form-horizontal.threeColFields .control-group,
+.form-horizontal .threeColFields li.control-group { float: left;  margin-bottom: 18px; width: 385px; }

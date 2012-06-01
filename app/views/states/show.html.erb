@@ -1,6 +1,12 @@
-<% title "Location :: #{@state.name}" %>
-
-<div class="well"><h2><strong>State Name:</strong> <%= @state.name %></h2></div>
+<% title "State - #{@state.name}" %>
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Edit", edit_state_path(@stare), :class => 'btn' %>
+    <%= link_to "Destroy", @stare, :class => 'btn', :confirm => 'Are you sure?', :method => :delete %>
+    <%= link_to "View All", states_path, :class => 'btn' %>
+  </div>
+  <%= page_title(yield(:title)) %>
+</div>
 <fieldset class="showStateView"><legend>Cities</legend>
 <ol>
   <% @state.cities.each do |city| %>
@@ -20,8 +26,3 @@
   <% end %>
 </ol>
 </fieldset>
-<div class="form-actions">
-  <%= link_to "Edit", edit_state_path(@stare), :class => 'btn' %>
-  <%= link_to "Destroy", @stare, :class => 'btn', :confirm => 'Are you sure?', :method => :delete %>
-  <%= link_to "View All", states_path, :class => 'btn' %>
-</div>

@@ -1,18 +1,21 @@
 <%= form_for @user, :html=> {:class=>"form-horizontal"} do |f| %>
     <%= f.error_messages %>
-    <ul class="unstyled">
+    <ul class="unstyled clearfix threeColFields">
       <li class="control-group">
         <%= f.label :title_gender, 'Title', :class=>"control-label" %>
         <div class="controls"><%= f.select(:title_gender, ["Mr", 'Ms'], {:prompt => 'Select Gender'})%></div>
       </li>
       <li class="control-group">
-        <%= f.label :first_name, 'Last Name', :class=>"control-label" %>
+        <%= f.label :first_name, 'First Name', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :first_name %></div>
       </li>
       <li class="control-group">
         <%= f.label :last_name, 'Last Name', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :last_name %></div>
       </li>
+
+      <li class="clearfix"></li>
+
       <li class="control-group">
         <%= f.label :email, 'Email', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :email %></div>
@@ -25,6 +28,9 @@
         <%= f.label :job_title, 'Job Title', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :job_title %></div>
       </li>
+
+      <li class="clearfix"></li>
+
       <li class="control-group">
         <%= f.label :assigned_to, 'Assigned to', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :assigned_to %></div>
@@ -37,9 +43,12 @@
         </div>
       </li>
       <li class="control-group">
-        <%= f.label :telephone, 'Telephone', :class=>"control-label" %>
-        <div class="controls"><%= f.text_field :telephone %></div>
+      <%= f.label :telephone, 'Telephone', :class=>"control-label" %>
+      <div class="controls"><%= f.text_field :telephone %></div>
       </li>
+
+      <li class="clearfix"></li>
+
       <li class="control-group">
         <%= f.label :mobile_phone, 'Mobile', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :mobile_phone %></div>
@@ -47,7 +56,8 @@
       <li class="control-group">
         <%= f.label :date_of_birth, 'Date of Birth', :class=>"control-label" %>
         <div class="controls">
-          <%= f.text_field :date_of_birth, :id => "user_date_of_birth", :value => params[:action] == "edit" ? @user.date_of_birth.to_s(:dmy) : "" %>
+          <!-- need to work on this - throwing error -->
+          <%= f.text_field :date_of_birth, :id => "user_date_of_birth", :value => params[:action] == "edit" || :date_of_birth.empty? ? @user.date_of_birth.to_s(:dmy) : "" %>
         </div>
       </li>
       <li class="control-group">
@@ -56,8 +66,8 @@
           <%= f.text_field :wedding_date, :id => "user_wedding_date", :value => params[:action] == "edit" ? @user.wedding_date.to_s(:dmy) : "" %>
         </div>
       </li>
-      <li class="form-actions">
-        <%= f.submit :class=>"btn btn-large btn-primary" %>
-      </li>
     </ul>
+    <div class="form-actions">
+      <%= f.submit :class=>"btn btn-large btn-primary" %>
+    </div>
 <% end %>
