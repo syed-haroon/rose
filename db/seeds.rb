@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+State.create(name: 'Karnataka')
+City.create([
+                { name: 'Mysore', state_id: 1 },
+                { name: 'Bangalore', state_id: 1 }
+            ])
+
+
+#[:admin, :user].each { |r| Role.create(:name => r) }
+#User.create(:login => 'admin', :role => Role.find_by_name('admin'))
+

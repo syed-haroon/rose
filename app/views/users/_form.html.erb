@@ -61,6 +61,17 @@
         <%= f.label :wedding_date, 'Wedding Date', :class=>"control-label" %>
         <div class="controls"><%= f.text_field :wedding_date, :value => @user.wedding_date %></div>
       </li>
+      <li class="cf">
+        <%= f.label :qualification, 'Qualification', :class=>"control-label" %>
+        <ul class="float_l" style="border: 1px solid #ccc; width: 200px; height: 100px; overflow: auto">
+          <% @qualifications.each do |qualification| %>
+              <li>
+                <%= check_box_tag "user[qualification_ids][]", qualification.id, @user.qualifications.include?(qualification) %>
+                <%= qualification.name %>
+              </li>
+          <% end %>
+        </ul>
+      </li>
     </ul>
     <div class="form-actions">
       <%= link_to "Cancel", @user, :class => "btn btn-large" %>
