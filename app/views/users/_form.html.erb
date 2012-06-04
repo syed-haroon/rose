@@ -43,8 +43,8 @@
         </div>
       </li>
       <li class="control-group">
-      <%= f.label :telephone, 'Telephone', :class=>"control-label" %>
-      <div class="controls"><%= f.text_field :telephone %></div>
+        <%= f.label :telephone, 'Telephone', :class=>"control-label" %>
+        <div class="controls"><%= f.text_field :telephone %></div>
       </li>
 
       <li class="clearfix"></li>
@@ -55,19 +55,15 @@
       </li>
       <li class="control-group">
         <%= f.label :date_of_birth, 'Date of Birth', :class=>"control-label" %>
-        <div class="controls">
-          <!-- need to work on this - throwing error -->
-          <%= f.text_field :date_of_birth, :id => "user_date_of_birth", :value => params[:action] == "edit" || :date_of_birth.empty? ? @user.date_of_birth.to_s(:dmy) : "" %>
-        </div>
+        <div class="controls"><%= f.text_field :date_of_birth, :value => @user.date_of_birth %></div>
       </li>
       <li class="control-group">
         <%= f.label :wedding_date, 'Wedding Date', :class=>"control-label" %>
-        <div class="controls">
-          <%= f.text_field :wedding_date, :id => "user_wedding_date", :value => params[:action] == "edit" ? @user.wedding_date.to_s(:dmy) : "" %>
-        </div>
+        <div class="controls"><%= f.text_field :wedding_date, :value => @user.wedding_date %></div>
       </li>
     </ul>
     <div class="form-actions">
+      <%= link_to "Cancel", @user, :class => "btn btn-large" %>
       <%= f.submit :class=>"btn btn-large btn-primary" %>
     </div>
 <% end %>

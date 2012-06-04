@@ -21,6 +21,7 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :last_accessed
 
       t.timestamps
+
     end
   end
 end

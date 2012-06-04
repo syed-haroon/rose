@@ -30,7 +30,12 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
 end
 
 #date formatted in edit view to remove "00:00:00" from "04-10-2011 00:00:00"
-Date::DATE_FORMATS[:dmy] = "%d-%m-%Y"
+#use age : if params[:action] == "edit" && @user.date_of_birth != "" f.text_field :date_of_birth, :id => "user_date_of_birth", :value => @user.date_of_birth.to_s(:dmy)
+#Date::DATE_FORMATS[:dmy] = "%d-%m-%Y"
+
+Date::DATE_FORMATS[:default] = "%d-%m-%Y"
+
+
 
 
 

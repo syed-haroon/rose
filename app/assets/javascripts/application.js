@@ -30,6 +30,3 @@ function add_fields(link, association, content) {
 $('span.field_with_errors').parent().addClass("error");
 
 
-$(function (){
-    $('#purchased_on').datepicker();
-});
