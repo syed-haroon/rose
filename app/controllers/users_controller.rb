@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @qualifications = Qualification.all
   end
 
   def list
@@ -20,9 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @qualifications = @user.qualifications.map { |q| q.name }.join(', ')
   end
 
   def edit
+    @qualifications = Qualification.all
   end
 
   def create

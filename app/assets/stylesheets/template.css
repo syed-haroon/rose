@@ -1,3 +1,5 @@
+input[type="image"], input[type="checkbox"], input[type="radio"]{ margin: auto }
+
 fieldset {
     background: none repeat scroll 0 0 #EEEEEE;
     border: 1px solid #AAAAAA;
@@ -32,3 +34,20 @@ fieldset legend{
 .showView label{ display: inline-block; text-align: right; width: 140px; margin-right: 5px }
 .form-horizontal.threeColFields .control-group,
 .form-horizontal .threeColFields li.control-group { float: left;  margin-bottom: 18px; width: 385px; }
+
+.qualificationWrap{
+    display: inline-block;
+    width: 210px;
+    height: 100px;
+    padding: 4px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    overflow: auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.qualificationWrap li{ margin: 0 0 3px 5px }
