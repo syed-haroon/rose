@@ -29,6 +29,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    @qualifications = Qualification.all
+
     @user = User.new(params[:user])
     if @user.save
       redirect_to @user, :notice => "Successfully created State."
@@ -38,6 +40,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    @qualifications = Qualification.all
+    params[:user][:qualification_ids] ||= []
+
     if @user.update_attributes(params[:user])
       redirect_to @user, :notice => "User Successfully updated."
     else

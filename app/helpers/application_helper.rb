@@ -1,5 +1,6 @@
 module ApplicationHelper
 
+  # Add nested fields START
   def link_to_remove_fields(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)", :class => "btn")
   end
@@ -11,5 +12,6 @@ module ApplicationHelper
     end
     link_to_function(name, "add_fields(this, '#{association}', '#{escape_javascript(fields)}')", :class => "add_field btn")
   end
+  # Add nested fields END
 
 end

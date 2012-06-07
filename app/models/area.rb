@@ -2,8 +2,7 @@ class Area < ActiveRecord::Base
 
   validates :name,
             :presence => true,
-            :uniqueness => {:scope => :city_id}
-            #:nested_attributes_uniqueness => {:field => :name}
+            :uniqueness => {:scope => :city_id, :case_sensitive => false}
 
   belongs_to :city
 
