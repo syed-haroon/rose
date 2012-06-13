@@ -27,7 +27,7 @@
 
       <% @users.each do |user| %>
           <tr class="<%= cycle('row0', 'row1') %> dotted_border">
-            <td><%= user.first_name %> <%= user.last_name %></td>
+            <td><%= user.title_gender + ". " + user.first_name + " " + user.last_name %></td>
             <td><%= user.email %></td>
             <td><%= user.user_type %></td>
             <td><%= user.job_title %></td>
