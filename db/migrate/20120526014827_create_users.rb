@@ -5,9 +5,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :title_gender,     :limit => 2
       t.string :first_name,       :limit => 30
       t.string :last_name,        :limit => 30
-      t.string :email,            :limit => 100
-      t.string :hashed_password,  :limit => 50
-      t.string :salt,             :limit => 50
+      t.string :email,            :default => "", :null => false, :limit => 60
+      t.string :hashed_password,  :limit => 40
+      t.string :salt,             :limit => 40
       t.string :user_type,        :limit => 15
       t.string :job_title,        :limit => 3
       t.string :assigned_to,      :limit => 4
